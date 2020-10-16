@@ -10,14 +10,41 @@
 					<button class="prev" @click="prev">prev</button>
 					<button class="play" v-if="!isPlaying" @click="play">Play</button>
 					<button class="pause" v-else @click="pause">Pause</button>
-					<button class="next" @click="next">Next</button>
+					<button class="next" @click="next">next</button>
 				</div>
 			</section>
 			<section class="playlist">
 				<h3>The Playlist</h3>
-				<button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
-					{{ song.title }} - {{ song.artist }}
-				</button>
+					<table>
+						<tr>
+							<th>Song</th>
+							<th>Artist</th>
+							<th>Source</th>
+							<th>Length</th>
+						</tr>
+						<tr>
+							<th>
+								<button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
+									{{ song.title }}
+								</button>
+							</th>
+							<th>
+								<button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
+									{{ song.artist }}
+								</button>
+							</th>
+							<th>
+								<p v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
+									{{ song.src }}
+								</p>
+							</th>
+							<th>
+								<p v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
+									{{ song.length }}
+								</p>
+							</th>
+						</tr>
+					</table>
 			</section>
 		</main>
 	</div>
@@ -35,22 +62,26 @@ export default {
 				{
 					title: 'Song 1',
 					artist: 'Johny Bravo',
-					src: require('./assets/song_1.mp3')
+					src: require('./assets/song_1.mp3'),
+					length: '00:51'
 				},
 				{
 					title: 'Song 2',
 					artist: 'Homer Simpson',
-					src: require('./assets/song_2.mp3')
+					src: require('./assets/song_2.mp3'),
+					length: '00:51'
 				},
 				{
 					title: 'Song 3',
 					artist: 'Luke Skywalker',
-					src: require('./assets/song_3.mp3')
+					src: require('./assets/song_3.mp3'),
+					length: '00:51'
 				},
 				{
 					title: 'Song 4',
 					artist: 'Jeff Kilby',
-					src: require('./assets/song_4.mp3')
+					src: require('./assets/song_4.mp3'),
+					length: '00:51'
 				}
 			],
 			player: new Audio()
@@ -168,7 +199,7 @@ button {
 	background-color: #FF5858;
 }
 .playlist {
-	padding: 0px 30px;
+	padding: center;
 }
 
 .playlist h3 {
