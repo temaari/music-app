@@ -33,14 +33,24 @@ export default {
 			isPlaying: false,
 			songs: [
 				{
-					title: 'grate',
-					artist: 'me',
-					src: require('./assets/file_example_MP3_2MG.mp3')
+					title: 'Song 1',
+					artist: 'Johny Bravo',
+					src: require('./assets/song_1.mp3')
 				},
 				{
-					title: 'ungrate',
-					artist: 'me',
-					src: require('./assets/file_example_MP3_700KB.mp3')
+					title: 'Song 2',
+					artist: 'Homer Simpson',
+					src: require('./assets/song_2.mp3')
+				},
+				{
+					title: 'Song 3',
+					artist: 'Luke Skywalker',
+					src: require('./assets/song_3.mp3')
+				},
+				{
+					title: 'Song 4',
+					artist: 'Jeff Kilby',
+					src: require('./assets/song_4.mp3')
 				}
 			],
 			player: new Audio()
