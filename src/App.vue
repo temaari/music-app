@@ -60,24 +60,28 @@ export default {
 			isPlaying: false,
 			songs: [
 				{
+					index: 0,
 					title: 'Song 1',
 					artist: 'Johny Bravo',
 					src: require('./assets/song_1.mp3'),
 					length: '00:51'
 				},
 				{
+					index: 1,
 					title: 'Song 2',
 					artist: 'Homer Simpson',
 					src: require('./assets/song_2.mp3'),
 					length: '00:51'
 				},
 				{
+					index: 2,
 					title: 'Song 3',
 					artist: 'Luke Skywalker',
 					src: require('./assets/song_3.mp3'),
 					length: '00:51'
 				},
 				{
+					index: 3,
 					title: 'Song 4',
 					artist: 'Jeff Kilby',
 					src: require('./assets/song_4.mp3'),
@@ -102,6 +106,7 @@ export default {
 				}
 			}.bind(this));
 			this.isPlaying = true;
+			this.index = song.index
 		},
 		pause () {
 			this.player.pause();
